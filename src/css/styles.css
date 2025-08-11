@@ -7,12 +7,132 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+form {
+  align-self: center;
+  padding: 24px;
+  display: flex;
+  gap: 8px;
+}
+
+label {
+  height: fit-content;
+  width: fit-content;
+}
+
+input {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  padding: 0 16px;
+  width: 500px;
+  height: 56px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  outline: none;
+}
+
+input::placeholder {
+  color: #808080;
+}
+
+input:hover,
+input:focus {
+  border-color: #000;
+}
+
+input:focus-visible {
+  border: 1px solid #4e75ff;
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 8px 32px;
+  border: none;
+  background-color: #4e75ff;
+  height: 56px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+button:hover,
+button:focus {
+  background-color: #6c8cff;
+}
+
+.gallery {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-self: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1208px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.gallery-item {
+  border: 1px solid hsl(0, 0%, 10%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms ease;
+  transform-origin: bottom;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.1);
+}
+
+.gallery-item-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  padding-bottom: 10px;
+}
+
+.text-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2e2f42;
+  font-weight: 600;
+}
+
+.text-info-data {
+  font-weight: 400;
+}
+
+.loader {
+  display: flex;
+  align-self: center;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #4e75ff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
