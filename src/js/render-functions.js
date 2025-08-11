@@ -24,7 +24,7 @@ export function createGallery(images) {
     )
     .join('');
 
-  galleryResult.innerHTML = markup;
+  galleryResult.insertAdjacentHTML('beforeend', markup);
 
   if (!lightbox) {
     lightbox = new SimpleLightbox('.gallery a', {});
@@ -43,4 +43,12 @@ export function showLoader() {
 
 export function hideLoader() {
   document.querySelector('.loader')?.classList.add('hidden');
+}
+
+export function showLoadMoreButton() {
+  document.querySelector('.load-more')?.classList.remove('hidden');
+}
+
+export function hideLoadMoreButton() {
+  document.querySelector('.load-more')?.classList.add('hidden');
 }
